@@ -1,0 +1,47 @@
+// config -------------------------------
+@import "functions";
+
+$prefix:                      'tj-';
+$enable-dark-mode:            false;
+
+$breakpoint-mobile:           480px;
+$breakpoint-desktop:          782px;
+
+$container:                   1170px;
+$border-radius:               8px !default;
+
+//Color
+$color--main: #877650;
+$color--hover: #706243;
+$color--pressed: #433B28;
+$color--focus: rgba(135, 118, 80, 0.1);
+$color--surface: #E7E4DC;
+$color--border: #C3BAA7;
+$color--bg-gradient: linear-gradient(180deg, #171F24 0%, #141414 100%);
+$color--bg-header: #141414;
+$color--bg-post: #141414;
+$color--bg-body: #1B1B1B;
+$color--fg: #FFF;
+
+// ------ CSS Variable ---------
+:root, body {
+    --#{$prefix}container: #{$container};
+    
+    --#{$prefix}color--main: #{$color--main};
+    --#{$prefix}color--main-rgb: #{hex-to-rgb($color--main)};
+    --#{$prefix}color--hover: #{$color--hover};
+    --#{$prefix}color--hover-rgb: #{hex-to-rgb($color--hover)};
+    --#{$prefix}color--pressed: #{$color--pressed};
+    --#{$prefix}color--pressed-rgb: #{hex-to-rgb($color--pressed)};
+    --#{$prefix}color--surface: #{$color--surface};
+    --#{$prefix}color--surface-rgb: #{hex-to-rgb($color--surface)};
+    --#{$prefix}color--border: #{$color--border};
+    --#{$prefix}color--border-rgb: #{hex-to-rgb($color--border)};
+    --#{$prefix}color--bg-gradient: #{$color--bg-gradient};
+    --#{$prefix}color--bg-header: #{$color--bg-header};
+    --#{$prefix}color--bg-body: #{$color--bg-body};
+    --#{$prefix}color--bg-post: #{$color--bg-post};
+    --#{$prefix}color--fg: #{$color--fg};
+    --#{$prefix}color--fg-rgb: #{hex-to-rgb($color--fg)};
+    
+}

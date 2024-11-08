@@ -1,0 +1,144 @@
+// Optionally load bootstrap components. Please comment these lines below if not needed.
+@import "../../../node_modules/bootstrap/scss/tables";
+
+table.table{
+    --tj-table-border-color: var(--tj-color--main);
+    tr{
+        td, th{
+            background-color: transparent;
+            color: #FFF;
+        }
+    }
+}
+
+.table-detail{
+    width: 100%;
+    margin-bottom: 0;
+    
+    tr{
+        &:not(:last-child){
+            th, td{
+                border-bottom: 1px solid var(--tj-color--main);
+            }
+        }
+
+        &:last-child{
+            th, td{
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
+        
+        &:first-child{
+            th, td{
+                padding-top: 0;
+            }
+        }
+
+        th, td{
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+            }
+        }
+
+        th{
+            width: 198px;
+        }
+
+        ul.serving{
+            list-style-type: none;
+            padding-left: 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            
+            @include media-breakpoint-up(lg){
+                margin-bottom: -12px;
+                margin-top: -12px;
+            }
+
+            @include media-breakpoint-down(lg){
+            }
+
+            li{
+                min-width: 180px;
+                display: inline-flex;
+                align-items: center;
+
+                @include media-breakpoint-up(lg){
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+
+                @include media-breakpoint-down(lg){
+                    min-width: 100%;
+                }
+
+                &:not(:last-child){
+                    margin-right: 24px;
+
+                    @include media-breakpoint-down(lg){
+                        margin-right: 0;
+                        margin-bottom: 8px
+                    }
+                }
+            }
+        }
+
+        ul.watt{
+            @extend ul.serving;
+        }
+
+        ul.colors{
+            list-style-type: none;
+            margin-bottom: 0;
+            padding-left: 0;
+            display: flex;
+
+            li{
+                &:not(:last-child){
+                    margin-right: 12px;
+                }
+                .color{
+                    width: 20px;
+                    height: 20px;
+                    background-color: var(--color);
+                }
+            }
+        }
+
+        .icon{
+            vertical-align: top;
+            margin-right: 8px;
+        }
+    }
+
+    @include media-breakpoint-down(lg){
+        display: block;
+        background-color: transparent;
+
+        tr{
+            th, td{
+                display: block;
+                width: 100%;
+                padding: 0 0;
+                background-color: transparent;
+            }
+
+            th{
+                border-bottom: 0 !important;
+                padding-top: 15px !important;
+            }
+
+            td{
+                padding-top: 10px !important;
+                padding-bottom: 15px !important;
+            }
+        }
+    }
+}

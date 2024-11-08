@@ -1,0 +1,14 @@
+{
+    "name": "tongkolspace/header-acf",
+    "title": "Header ACF",
+    "description": "Header section use ACF",
+    "category": "tongkolspace",
+    "keywords": ["header","menu", "navigation", "acf"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

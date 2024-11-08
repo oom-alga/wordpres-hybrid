@@ -1,0 +1,41 @@
+.post-sharing-icons{
+    display: inline-flex;
+    background-color: var(--tj-color--bg-post);
+    border-radius: 8px;
+    padding: 8px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @include media-breakpoint-down(lg){
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .label-share{
+        font-weight: 700;
+        margin-right: 16px;
+    }
+
+    .wp-block-tonjoo-blocks-sharing-icon{
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+
+    }
+    
+    .social-icon__link{
+        &:hover{
+            --color: var(--tj-color--hover);
+            color: var(--tj-color--hover);
+        }
+    }
+
+    &.wide{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}

@@ -1,0 +1,25 @@
+// Optionally load bootstrap components. Please comment these lines below if not needed.
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+
+.tj-container {
+	margin: 0 auto;
+	width: 100%;
+	// max-width: calc( var(--wp--style--global--wide-size) + var(--wp--style--root--padding-left) + var(--wp--style--root--padding-right) );
+	max-width: var(--wp--style--global--wide-size);
+	
+	@include media-breakpoint-down(lg){
+		padding-right: var(--wp--style--root--padding-right);
+		padding-left: var(--wp--style--root--padding-left);
+	}
+
+	&-content{
+		max-width: var(--wp--style--global--content-size);
+		margin: 0 auto;
+		width: 100%;
+	}
+}
+
+.row{
+	--tj-gutter-x: 30px; 
+}

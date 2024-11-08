@@ -1,0 +1,298 @@
+@mixin media-mobile() {
+    @media (max-width: #{ ($breakpoint-mobile - 0.2) }) {
+        @content;
+    }
+}
+@mixin media-tablet-desktop() {
+    @media (min-width: #{ ($breakpoint-mobile) }) {
+        @content;
+    }
+}
+@mixin media-tablet() {
+    @media (min-width: #{ ($breakpoint-mobile) }) and (max-width: #{ ($breakpoint-desktop - 0.2) }) {
+        @content;
+    }
+}
+@mixin media-mobile-tablet() {
+    @media (max-width: #{ ($breakpoint-desktop - 0.2) }) {
+        @content;
+    }
+}
+@mixin media-desktop() {
+    @media (min-width: #{ ($breakpoint-desktop) }) {
+        @content;
+    }
+}
+
+// Coloring svg phosphoricon
+@mixin iconph($base:#000, $hover:#545454) {
+    svg {
+        > * {
+            transition: all 0.2s ease-in-out;
+        }
+
+        &[stroke]:not([stroke=none]),
+        rect[stroke]:not([stroke=none]),
+        polyline[stroke]:not([stroke=none]),
+        polygon[stroke]:not([stroke=none]),
+        path[stroke]:not([stroke=none]),
+        line[stroke]:not([stroke=none]),
+        circle[stroke]:not([stroke=none]),
+        ellipse[stroke]:not([stroke=none]) {
+            stroke: var(--icon, $base);
+            fill: none;
+        }
+
+        &[fill]:not([fill=none]),
+        rect[fill]:not([fill=none]),
+        polyline[fill]:not([fill=none]),
+        polygon[fill]:not([fill=none]),
+        path[fill]:not([fill=none]),
+        line[fill]:not([fill=none]),
+        circle[fill]:not([fill=none]),
+        ellipse[fill]:not([fill=none]),
+        rect[opacity]:not([opacity=none]),
+        polyline[opacity]:not([opacity=none]),
+        polygon[opacity]:not([opacity=none]),
+        path[opacity]:not([opacity=none]),
+        line[opacity]:not([opacity=none]),
+        circle[opacity]:not([opacity=none]),
+        ellipse[opacity]:not([opacity=none]),
+        circle:not([fill]):not([stroke]) {
+            fill: var(--icon, $base);
+            stroke: none;
+        }
+    }
+
+    // Hover state styles
+    &:hover {
+        svg {    
+            &[stroke]:not([stroke=none])
+            rect[stroke]:not([stroke=none]),
+            polyline[stroke]:not([stroke=none]),
+            polygon[stroke]:not([stroke=none]),
+            path[stroke]:not([stroke=none]),
+            line[stroke]:not([stroke=none]),
+            circle[stroke]:not([stroke=none]),
+            ellipse[stroke]:not([stroke=none]) {
+                stroke: var(--icon-hover, $hover);
+                fill: none;
+            }
+    
+            &[fill]:not([fill=none]),
+            rect[fill]:not([fill=none]),
+            polyline[fill]:not([fill=none]),
+            polygon[fill]:not([fill=none]),
+            path[fill]:not([fill=none]),
+            line[fill]:not([fill=none]),
+            circle[fill]:not([fill=none]),
+            ellipse[fill]:not([fill=none]),
+            rect[opacity]:not([opacity=none]),
+            polyline[opacity]:not([opacity=none]),
+            polygon[opacity]:not([opacity=none]),
+            path[opacity]:not([opacity=none]),
+            line[opacity]:not([opacity=none]),
+            circle[opacity]:not([opacity=none]),
+            ellipse[opacity]:not([opacity=none]),
+            circle:not([fill]):not([stroke]) {
+                fill: var(--icon-hover, $hover);
+                stroke: none;
+            }
+        }
+    }
+}
+
+// Multiline Ellipsis
+@mixin textEllipsis($lines: 2, $font-size: 1em, $line-height: 1.2) {
+	display: block; // Fallback for non-webkit
+	display: -webkit-box;
+	max-height: $font-size*$line-height*$lines; // Fallback for non-webkit
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+//Hide Scrollbar
+@mixin hideScrollbar{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+}
+
+@mixin imageHover{
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+
+    > img{
+        transform: scale(1.02);
+        transition: all .3s ease;
+    }
+
+    &:hover{
+        > img{
+            transform: scale(1.1);
+        }
+    }
+}
+
+@mixin navList{
+    >li {
+        .dropdown-menu {
+            display: block;
+            margin-left: 0px;
+            min-width: 180px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: var(--tj-border-color);
+            background-color: rgba(255,255,255,1);
+            transition-property: all;
+            transition-duration: 150ms;
+            transition-duration: .2s;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        >.dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            z-index: 10;
+            transform-origin: top;
+            --tj-translate-x: 0px;
+            --tj-translate-y: 0px;
+            --tj-scale-x: 1;
+            --tj-scale-y: 0;
+            transform: translate(var(--tj-translate-x), var(--tj-translate-y)) rotate(var(--tj-rotate)) skewX(var(--tj-skew-x)) skewY(var(--tj-skew-y)) scaleX(var(--tj-scale-x)) scaleY(var(--tj-scale-y));
+            border-radius: 0px;
+            opacity: 0;
+            .dropdown-menu {
+                position: absolute;
+                top: 0px;
+                left: 100%;
+                z-index: 10;
+                transform-origin: left;
+                --tj-translate-x: 0px;
+                --tj-translate-y: 0px;
+                --tj-scale-x: 0;
+                --tj-scale-y: 1;
+                transform: translate(var(--tj-translate-x), var(--tj-translate-y)) rotate(var(--tj-rotate)) skewX(var(--tj-skew-x)) skewY(var(--tj-skew-y)) scaleX(var(--tj-scale-x)) scaleY(var(--tj-scale-y));
+                opacity: 0;
+            }
+        }
+        &:last-child {
+            >.dropdown-menu {
+                left: unset;
+                right: 0px;
+                .dropdown-menu {
+                    left: unset;
+                    right: 100%;
+                    transform-origin: right;
+                }
+            }
+        }
+        &:hover {
+            >.dropdown-menu {
+                --tj-translate-x: 0px;
+                --tj-translate-y: 0px;
+                --tj-scale-x: 1;
+                --tj-scale-y: 1;
+                transform: translate(var(--tj-translate-x), var(--tj-translate-y)) rotate(var(--tj-rotate)) skewX(var(--tj-skew-x)) skewY(var(--tj-skew-y)) scaleX(var(--tj-scale-x)) scaleY(var(--tj-scale-y));
+                opacity: 1;
+            }
+        }
+        li {
+            &:hover {
+                >.dropdown-menu {
+                    --tj-translate-x: 0px;
+                    --tj-translate-y: 0px;
+                    --tj-scale-x: 1;
+                    --tj-scale-y: 1;
+                    transform: translate(var(--tj-translate-x), var(--tj-translate-y)) rotate(var(--tj-rotate)) skewX(var(--tj-skew-x)) skewY(var(--tj-skew-y)) scaleX(var(--tj-scale-x)) scaleY(var(--tj-scale-y));
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+//Menu List
+@mixin menuList{
+	li li{
+		margin-top: 10px;
+	}
+    .menu-item-has-children{
+		&:hover{
+			
+			> a{
+				color: var(--nav-link-hover-color) !important;
+			}
+		}
+		.expand{
+			cursor: pointer;
+			top: 0 !important;
+			right: 0 !important;
+
+			svg{
+				transform: rotate(-90deg) !important;
+				transition: transform .3s ease-in-out;
+			}
+		}
+
+		&.show{
+			
+
+			> a{
+				color: var(--nav-link-hover-color) !important;
+			}
+			
+			> .dropdown-menu{
+				display: block;
+			}
+
+			> .expand{
+				svg{
+					transform: rotate(0deg) !important;
+				}
+			}
+		}
+
+		.dropdown-menu{	
+			// display: none;
+			transition: all .3s ease-in-out;
+			position: relative !important;
+
+			.dropdown-menu{
+				transform-origin: left !important;
+				position: relative !important;
+				width: 100% !important;
+				right: unset !important;
+				left: unset !important;
+			}
+		}
+
+		.menu-item-has-children{
+			> .expand{
+				top: 0;
+				right: 0;
+			}
+		}
+    }
+}
+
+//li List
+@mixin liList{
+	> li{
+		&:not(:last-child) {
+			margin-bottom: 10px;
+			border-bottom-width: 1px;
+			border-style: solid;
+			border-color: var(--tj-border-color-separator);
+			padding-bottom: 10px;
+		}
+	}
+}

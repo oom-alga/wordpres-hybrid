@@ -1,0 +1,140 @@
+.widget{
+    .widget-head{
+        ~ .widget-body{
+            margin-top: 24px;
+            
+            @include media-breakpoint-down(lg){
+                margin-top: 16px;
+            }
+        }
+
+        .widget-title{
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    &[class*=widget-list]{
+        ul{
+            display: flex;
+            flex-direction: column;
+
+            li{
+                &:not(:last-child){
+                    margin-bottom: 24px;
+
+                    @include media-breakpoint-down(lg){
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+    &.widget-list-link{
+        .widget-body{
+            ul{
+                li{
+                    a{
+                        display: flex;
+                        position: relative;
+                        align-items: center;
+
+                        &::before{
+                            content: '';
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 24px;
+                            height: 24px;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.99991 20.3599C8.85157 20.3599 8.70656 20.3159 8.58321 20.2335C8.45987 20.1511 8.36374 20.034 8.30697 19.8969C8.2502 19.7599 8.23535 19.6091 8.26429 19.4636C8.29323 19.3181 8.36467 19.1844 8.46956 19.0795L15.4392 12.1099L8.46956 5.14023C8.32891 4.99957 8.24989 4.8088 8.24989 4.60988C8.24989 4.41097 8.32891 4.22019 8.46956 4.07954C8.61022 3.93888 8.80099 3.85986 8.99991 3.85986C9.19882 3.85986 9.38959 3.93888 9.53025 4.07954L17.0303 11.5795C17.0999 11.6492 17.1552 11.7319 17.1928 11.8229C17.2305 11.9139 17.2499 12.0114 17.2499 12.1099C17.2499 12.2084 17.2305 12.3059 17.1928 12.3969C17.1552 12.4879 17.0999 12.5706 17.0303 12.6402L9.53025 20.1402C9.46068 20.21 9.37801 20.2653 9.287 20.303C9.19598 20.3407 9.09842 20.36 8.99991 20.3599Z' fill='%23877650'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget-list-marketplace{
+        ul{
+            li{
+                a{
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+
+                    .icon{
+                        img{
+                            width: 24px;
+                            height: 24px;
+                            object-fit: contain;
+                        }
+
+                        ~ span{
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget-list-contact{
+        ul{
+            li{
+                a{
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+
+                    .icon{
+                        svg{
+                            width: 24px;
+                            height: 24px;
+                        }
+                        ~ span{
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.widget-list-social{
+        ul{
+            display: flex;
+            flex-direction: row;
+
+            li{
+                &:not(:last-child){
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+                a{
+                    background-color: rgba(var(--tj-color--fg-rgb), .1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--tj-color--fg);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 4px;
+
+                    .icon{
+                        svg{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+
+                    &:hover{
+                        background-color: var(--tj-color--main);
+                    }
+                }
+            }
+        }
+    }
+}

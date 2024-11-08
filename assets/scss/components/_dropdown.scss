@@ -1,0 +1,18 @@
+@import "../../../node_modules/bootstrap/scss/dropdown";
+
+.dropdown {
+    @include media-breakpoint-up(md){
+        .dropdown-menu {
+            transition: all 0.2s ease;
+            // overflow: hidden;
+            transform-origin: top center;
+            transform: scale(1,0);
+            display: block;
+        }
+        &:hover {
+            > .dropdown-menu {
+                transform: scale(1);
+            }
+        }
+    }
+}

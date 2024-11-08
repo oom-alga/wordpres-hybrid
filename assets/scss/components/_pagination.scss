@@ -1,0 +1,81 @@
+.wp-block-query-pagination,
+.pagination {
+	--pagination-bg: transparent;
+	--pagination-border-current: var(--tj-color--main);
+	--pagination-current: var(--tj-color--fg);
+	--pagination-bg-hover: var(--tj-color--hover);
+	--pagination-size: 40px; 
+	--pagination-gap: 12px; 
+	--arrow-padding: 12px;
+	
+	@include media-breakpoint-down(lg){
+		--pagination-size: 30px; 
+		--pagination-gap: 8px; 
+		--arrow-padding: 6px;
+	}
+
+	position: relative;
+	text-align: center;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 !important;
+
+	.icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+    .wp-block-query-pagination-numbers {
+    	display: flex;
+		gap: 0;
+    	margin: 0 calc( var(--pagination-gap) / 2 ) 0;
+
+		> .page-numbers{
+			margin: 0 calc( var(--pagination-gap) / 2 );
+		}
+    }
+
+    .page-numbers,
+    .wp-block-query-pagination-previous,
+    .wp-block-query-pagination-next {
+		margin: 0;
+		padding: 0 var(--arrow-padding);
+		width: auto;	
+		min-width: var(--pagination-size, 36px);
+		height: var(--pagination-size, 36px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 3px;
+		background-color: var(--pagination-bg, #FFF);
+		border: 1px solid var(--pagination-border, var(--wp--preset--color--primary));
+		color: var(--pagination-color, #FFF);
+
+		&:hover{
+			border-color: var(--pagination-border-hover, var(--wp--preset--color--primary));
+			background-color: var(--pagination-bg-hover, var(--wp--preset--color--primary));
+			color: var(--pagination-hover, #FFF);
+		}
+
+		&.current {
+			border-color: var(--pagination-border-current, var(--wp--preset--color--primary));
+			background-color: var(--pagination-bg-current, var(--wp--preset--color--primary));
+			color: var(--pagination-current, #FFF);
+		}
+	}
+
+	.wp-block-query-pagination-previous,
+    .wp-block-query-pagination-next {
+		--pagination-color: var(--tj-color--main);
+	}
+}
+.wp-block-query-pagination {
+
+}
+
+.pagination-wrap{
+	margin-top: 40px;
+}

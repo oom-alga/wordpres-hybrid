@@ -1,0 +1,34 @@
+// overrides.
+@import "variables";
+@import "mixins";
+
+// required libraries.
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "reboot";
+
+// global layout.
+@import "../../node_modules/bootstrap/scss/root";
+// @import "../../node_modules/bootstrap/scss/reboot";
+// @import "../../node_modules/bootstrap/scss/helpers";
+
+@import "components/blocks";
+@import "components/layout";
+@import "components/dropdown";
+@import "components/header";
+@import "components/footer";
+@import "components/pagination";
+@import "components/post-meta";
+@import "components/post-content";
+
+.acf-custom-block {
+	border: 1px solid #ccc;
+	background: #f0f0f0;
+	padding: 10px 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+}

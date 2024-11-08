@@ -1,0 +1,33 @@
+// overrides.
+@import "variables";
+
+// required libraries.
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "mixins";
+
+@import "components/breadcrumbs";
+@import "components/post-meta";
+@import "components/post-content";
+@import "components/post-item";
+@import "components/forms";
+@import "components/share";
+@import "components/swiper";
+@import "components/tables";
+
+.section-related-post{
+    --section-bg: #212121;
+    --section-py: 70px;
+    --head-mb: 40px;
+    
+    @include media-breakpoint-down(lg){
+        --section-py: 40px;
+    }
+
+    .row-posts{
+        --tj-gutter-y: 30px;
+    }
+}

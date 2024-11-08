@@ -1,0 +1,82 @@
+// Optionally load bootstrap components. Please comment these lines below if not needed.
+// @import "../../../node_modules/bootstrap/scss/button-group";
+@import "../../../node_modules/bootstrap/scss/buttons";
+// @import "../../../node_modules/bootstrap/scss/close";
+
+.wp-element-button{
+    @extend .btn;
+
+    &, .btn{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        > .icon{
+            display: inline-block;
+            line-height: 1;
+
+            ~ span{
+                margin-left: 8px;
+            }
+        }
+    }
+}
+.btn{
+    --tj-btn-padding-x: 28px;
+    --tj-btn-padding-y: 12px;
+    --tj-btn-font-size: var(--wp--preset--font-size--base);
+    --tj-btn-font-weight: 600;
+    --tj-btn-line-height: 1.6;
+    min-width: 190px;
+
+    @include media-breakpoint-down(md){
+        --tj-btn-padding-x: 20px;
+        --tj-btn-padding-y: 10px;
+    }
+
+    &-primary{ //.btn-primary
+        --tj-btn-color: #fff;
+        --tj-btn-bg: var(--tj-color--main);
+        --tj-btn-border-color: var(--tj-color--main);
+        --tj-btn-hover-color: #fff;
+        --tj-btn-hover-bg: var(--tj-color--hover);
+        --tj-btn-hover-border-color: var(--tj-color--hover);
+        --tj-btn-focus-shadow-rgb: 49, 132, 253;
+        --tj-btn-active-color: #fff;
+        --tj-btn-active-bg: var(--tj-color--pressed);
+        --tj-btn-active-border-color: var(--tj-color--pressed);
+        --tj-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+        --tj-btn-disabled-color: #fff;
+        --tj-btn-disabled-bg: rgba(var(--tj-color--main-rgb), .7);
+        --tj-btn-disabled-border-color: rgba(var(--tj-color--main-rgb), .7);
+    }
+
+    &-outline{
+        &-primary{ //.btn-outline-primary
+            --tj-btn-color: #fff;
+            --tj-btn-bg: transparent;
+            --tj-btn-border-color: var(--tj-color--border);
+            --tj-btn-hover-color: #fff;
+            --tj-btn-hover-bg: var(--tj-color--hover);
+            --tj-btn-hover-border-color: var(--tj-color--hover);
+            --tj-btn-focus-shadow-rgb: 49, 132, 253;
+            --tj-btn-active-color: #fff;
+            --tj-btn-active-bg: transparent;
+            --tj-btn-active-border-color: var(--tj-color--pressed);
+            --tj-btn-active-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+            --tj-btn-disabled-color: #fff;
+            --tj-btn-disabled-bg: rgba(var(--tj-color--main-rgb), .7);
+            --tj-btn-disabled-border-color: rgba(var(--tj-color--main-rgb), .7);
+        }
+    }
+
+    &-navbar-search{
+        --tj-btn-padding-x: 12px;
+        --tj-btn-padding-y: 6px;
+        --tj-btn-border-color: var(--tj-color--main);
+        min-width: auto;
+        background-color: transparent;
+        border-color: var(--tj-color--main);
+    }
+}
